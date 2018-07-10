@@ -117,7 +117,7 @@ public class EmployeeRestTest {
         logger.info(result);
     }
 
-    @Test
+    //@Test
     public void test006Delete() throws Exception {
         params.clear();
         params.add("id", "1");

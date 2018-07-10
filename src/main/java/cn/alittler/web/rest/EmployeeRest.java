@@ -25,7 +25,7 @@ public class EmployeeRest {
 
     @PostMapping
     public Employee create(@RequestParam String name, @RequestParam String birthday, @RequestParam Integer departmentId,
-                           @RequestParam Integer roleId) {
+                           @RequestParam List<Integer> roleId) {
         Employee employee = employeeService.save(name, birthday, departmentId, roleId);
         return employee;
     }
