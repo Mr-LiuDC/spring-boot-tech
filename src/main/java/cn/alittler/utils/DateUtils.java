@@ -11,6 +11,9 @@ import java.util.Date;
  */
 @Slf4j
 public class DateUtils {
+
+    private DateUtils() { }
+
     public static Date parseDateStr(String dateStr, String pattern) {
         Date resultDate = null;
         try {
