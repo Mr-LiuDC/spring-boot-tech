@@ -25,8 +25,7 @@ public class RoleRest {
 
     @PostMapping
     public Role create(@RequestParam String name) {
-        Role role = roleService.save(name);
-        return role;
+        return roleService.save(name);
     }
 
     @DeleteMapping
@@ -37,26 +36,22 @@ public class RoleRest {
 
     @PutMapping
     public Role updateById(@RequestParam Integer id, @RequestParam String name) {
-        Role role = roleService.update(id, name);
-        return role;
+        return roleService.update(id, name);
     }
 
     @GetMapping("/{id}")
     public Role getById(@PathVariable Integer id) {
-        Role role = roleService.findById(id);
-        return role;
+        return roleService.findById(id);
     }
 
     @GetMapping("/page")
     public Page<Role> getPage(@RequestParam Integer pageNo, @RequestParam Integer pageSize) {
-        Page<Role> page = roleService.getPage(pageNo, pageSize);
-        return page;
+        return roleService.getPage(pageNo, pageSize);
     }
 
     @GetMapping
     public List<Role> getAll() {
-        List<Role> list = roleService.findAll();
-        return list;
+        return roleService.findAll();
     }
 
 }

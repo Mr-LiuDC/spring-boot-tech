@@ -25,8 +25,7 @@ public class DepartmentRest {
 
     @PostMapping
     public Department create(@RequestParam String name) {
-        Department department = departmentService.save(name);
-        return department;
+        return departmentService.save(name);
     }
 
     @DeleteMapping
@@ -37,25 +36,21 @@ public class DepartmentRest {
 
     @PutMapping
     public Department updateById(@RequestParam Integer id, @RequestParam String name) {
-        Department department = departmentService.update(id, name);
-        return department;
+        return departmentService.update(id, name);
     }
 
     @GetMapping("/{id}")
     public Department getById(@PathVariable Integer id) {
-        Department department = departmentService.findById(id);
-        return department;
+        return departmentService.findById(id);
     }
 
     @GetMapping("/page")
     public Page<Department> getPage(@RequestParam Integer pageNo, @RequestParam Integer pageSize) {
-        Page<Department> page = departmentService.getPage(pageNo, pageSize);
-        return page;
+        return departmentService.getPage(pageNo, pageSize);
     }
 
     @GetMapping
     public List<Department> getAll() {
-        List<Department> list = departmentService.findAll();
-        return list;
+        return departmentService.findAll();
     }
 }

@@ -26,8 +26,7 @@ public class EmployeeRest {
     @PostMapping
     public Employee create(@RequestParam String name, @RequestParam String birthday, @RequestParam Integer departmentId,
                            @RequestParam List<Integer> roleId) {
-        Employee employee = employeeService.save(name, birthday, departmentId, roleId);
-        return employee;
+        return employeeService.save(name, birthday, departmentId, roleId);
     }
 
     @DeleteMapping
@@ -38,25 +37,21 @@ public class EmployeeRest {
 
     @PutMapping
     public Employee updateById(@RequestParam Integer id, @RequestParam String name, @RequestParam String birthday) {
-        Employee employee = employeeService.update(id, name, birthday);
-        return employee;
+        return employeeService.update(id, name, birthday);
     }
 
     @GetMapping("/{id}")
     public Employee getById(@PathVariable Integer id) {
-        Employee employee = employeeService.findById(id);
-        return employee;
+        return employeeService.findById(id);
     }
 
     @GetMapping("/page")
     public Page<Employee> getPage(@RequestParam Integer pageNo, @RequestParam Integer pageSize) {
-        Page<Employee> page = employeeService.getPage(pageNo, pageSize);
-        return page;
+        return employeeService.getPage(pageNo, pageSize);
     }
 
     @GetMapping
     public List<Employee> getAll() {
-        List<Employee> list = employeeService.findAll();
-        return list;
+        return employeeService.findAll();
     }
 }

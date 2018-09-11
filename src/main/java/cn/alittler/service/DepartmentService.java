@@ -10,12 +10,7 @@ import java.util.List;
  */
 public interface DepartmentService {
 
-    /**
-     * 保存
-     *
-     * @param name
-     * @return
-     */
+
     Department save(String name);
 
     /**
